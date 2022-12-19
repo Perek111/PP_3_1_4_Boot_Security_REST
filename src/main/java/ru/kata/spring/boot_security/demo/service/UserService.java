@@ -7,7 +7,6 @@ import java.util.List;
 
 
 public interface UserService extends UserDetailsService{
-
     List<User> getAllUsers();
     boolean saveUser(User user);
     User getUserById(Long id);
@@ -15,5 +14,4 @@ public interface UserService extends UserDetailsService{
     UserDetails loadUserByUsername(String email);
     void editUser(Long id, User user);
     boolean existsById(Long id);
-
 }

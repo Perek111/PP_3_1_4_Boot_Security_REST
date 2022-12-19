@@ -10,17 +10,14 @@ import ru.kata.spring.boot_security.demo.model.User;
 import java.util.List;
 
 
-
 @Service
 @Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
-    private final RoleService roleService;
     private final PasswordEncoder passwordEncoder;
     private final UserDao userDao;
 
     @Autowired
-    public UserServiceImpl(RoleService roleService, PasswordEncoder passwordEncoder, UserDao userDao) {
-        this.roleService = roleService;
+    public UserServiceImpl(PasswordEncoder passwordEncoder, UserDao userDao) {
         this.passwordEncoder = passwordEncoder;
         this.userDao = userDao;
     }
